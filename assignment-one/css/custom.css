@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.zoom_block{
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+	border: 1px solid #000;
+	width: 200px;
+	height: 100px;
+	-webkit-transform: scale(.8);
+	-ms-transform: scale(.8);
+	-o-transform: scale(.8);
+	transform: scale(.8);
+	overflow: hidden;
+}
+
+.zoom_block:hover{
+	background-color: orange;
+	border: 1px solid orange;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}

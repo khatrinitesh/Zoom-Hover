@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zoom hover</title>
+	<!-- <link rel="stylesheet" href="css/swiper.min.css"> -->
+	<link rel="stylesheet" href="https://k1ngzed.com/dist/swiper/swiper.min.css">
+	<link rel="stylesheet" href="css/easyzoom.css">
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<div class="product__carousel">
+    <!-- Swiper and EasyZoom plugins start -->
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+      <div class="swiper-slide easyzoom easyzoom--overlay">
+        <a href="https://k1ngzed.com/dist/images/nature-1.jpg">
+          <img src="https://k1ngzed.com/dist/images/nature-1.jpg" alt=""/>
+        </a>
+      </div>
+      <div class="swiper-slide easyzoom easyzoom--overlay">
+        <a href="https://k1ngzed.com/dist/images/nature-2.jpg">
+          <img src="https://k1ngzed.com/dist/images/nature-2.jpg" alt=""/>
+        </a>
+      </div>
+      <div class="swiper-slide easyzoom easyzoom--overlay">
+        <a href="https://k1ngzed.com/dist/images/nature-3.jpg">
+          <img src="https://k1ngzed.com/dist/images/nature-3.jpg" alt=""/>
+        </a>
+      </div>
+      <div class="swiper-slide easyzoom easyzoom--overlay">
+        <a href="https://k1ngzed.com/dist/images/nature-4.jpg">
+          <img src="https://k1ngzed.com/dist/images/nature-4.jpg" alt=""/>
+        </a>
+      </div>
+      <div class="swiper-slide easyzoom easyzoom--overlay">
+        <a href="https://k1ngzed.com/dist/images/nature-5.jpeg">
+          <img src="https://k1ngzed.com/dist/images/nature-5.jpeg" alt=""/>
+        </a>
+      </div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://k1ngzed.com/dist/images/nature-1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://k1ngzed.com/dist/images/nature-2.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://k1ngzed.com/dist/images/nature-3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://k1ngzed.com/dist/images/nature-4.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://k1ngzed.com/dist/images/nature-5.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- Swiper and EasyZoom plugins end -->
+</div>
+
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/swiper.min.js"></script> -->
+<script type="text/javascript" src="https://k1ngzed.com/dist/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="js/easyzoom.js"></script>
+<script type="text/javascript">
+	    // product Gallery and Zoom
+
+    // activation carousel plugin
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 5,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            0: {
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+        }
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        },
+    });
+    // change carousel item height
+    // gallery-top
+    let productCarouselTopWidth = $('.gallery-top').outerWidth();
+    $('.gallery-top').css('height', productCarouselTopWidth);
+
+    // gallery-thumbs
+    let productCarouselThumbsItemWith = $('.gallery-thumbs .swiper-slide').outerWidth();
+    $('.gallery-thumbs').css('height', productCarouselThumbsItemWith);
+
+    // activation zoom plugin
+    var $easyzoom = $('.easyzoom').easyZoom();
+</script>
+</body>
+</html>
